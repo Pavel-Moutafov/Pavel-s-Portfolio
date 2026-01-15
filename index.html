@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: #f5f5f5; color: #111; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+    h1,h2,h3 { font-weight: 700; margin-bottom: 20px; }
+    p { margin-bottom: 20px; }
+
+    /* Navigation */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #111; color: #fff; position: sticky; top: 0; z-index: 1000; }
+    nav a { color: #fff; margin-left: 20px; font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: #f39c12; }
+
+    /* Hero Section */
+    #home { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; background: linear-gradient(135deg,#6c63ff,#f39c12); color: #fff; }
+    #home h1 { font-size: 3rem; margin-bottom: 20px; }
+    #home p { font-size: 1.2rem; max-width: 600px; }
+
+    /* About */
+    #about { background: #fff; text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    #about img { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 20px; }
+
+    /* Portfolio */
+    #portfolio { text-align: center; }
+    .projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+    .project { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .project:hover { transform: translateY(-5px); }
+    .project img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+
+    /* Contact */
+    #contact { background: #fff; text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    #contact form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
+    #contact input, #contact textarea { padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; }
+    #contact button { padding: 10px; border: none; background: #6c63ff; color: #fff; font-weight: 600; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+    #contact button:hover { background: #f39c12; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; margin-top: 40px; color: #555; }
+
+    @media(max-width: 768px) {
+      nav { flex-direction: column; }
+      nav a { margin: 10px 0 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo"><strong>My Portfolio</strong></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Hi, I'm Pavel</h1>
+    <p>Welcome to my portfolio. Here you'll find some of the projects I’ve built in class and on my own. I love creating modern and sleek designs with clean code.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <img src="https://via.placeholder.com/150" alt="Your Photo">
+    <h2>About Me</h2>
+    <p>I'm a 9th grade computer science student with a passion for building projects, learning new tech, and designing clean, functional websites and applications.</p>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="file:///Users/pavelmoutafov/Desktop/Screenshot%202026-01-13%20at%209.32.34%E2%80%AFAM.png" alt="Project 1">
+        <h3>Python Turtle Art</h3>
+        <p>Redesigned logo for Miami
+          <br></br>
+          <a href="https://gist.github.com/Pavel-Moutafov/3de233b4232b1d1d70981daf2e97af53#file-turtle-code" target="_blank" rel="noopener noreferrer">
+  View My Turtle Code on GitHub Gist
+</a>
+
+        </p>
+      </div>
+      <div class="project">
+        <img src="file:///Users/pavelmoutafov/Desktop/Screenshot%202026-01-13%20at%209.44.42%E2%80%AFAM.png">
+        <h3>Recipe Website</h3>
+        <p>My recipe for a cheesecake</p>
+        <a href="https://pavel-moutafov.github.io/cheescakerecipe/">
+          View My Website Here
+        </a>
+      </div>
+      <div class="project">
+        <img src="file:///Users/pavelmoutafov/Desktop/Screenshot%202026-01-15%20at%201.16.44%E2%80%AFPM.png">
+        <h3>AI Escape Game</h3>
+        <p>This is my escape game prompt which can be entered into an AI engine and you can play it!</p>
+        <button id="openModal">View Game Description</button>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <h2>🧪 Medieval Chemistry Escape Room</h2>
+
+    <p><strong>Game Master Version</strong></p>
+
+    <p>
+      <strong>ROLE:</strong><br>
+      You are the Game Master of an educational, text-based escape room.
+    </p>
+
+    <p>
+      <strong>Player’s Role:</strong><br>
+      The player is a modern-day chemist trapped in 1300’s England after a time travel malfunction.
+      Their goal is to escape the castle using modern science before 24 hours are up.
+    </p>
+
+    <p>
+      <strong>Learning Objective:</strong><br>
+      Use your knowledge of science and modern technology to escape the castle.
+    </p>
+
+    <p>
+      <strong>🏰 Setting:</strong><br>
+      You wake up in a dark medieval cell. Through a barred window, you see your time machine across the moat.
+    </p>
+
+    <h3>⚖️ Game Master Rules</h3>
+    <ul>
+      <li>Describe only what the player does</li>
+      <li>No magic, superpowers, or brute force</li>
+      <li>No winning fights with guards</li>
+      <li>Stay immersive to 1300s England</li>
+      <li>Player has no items unless found</li>
+      <li>Player cannot claim they escaped</li>
+      <li>Player cannot wait longer than one day</li>
+    </ul>
+
+    <h3>🧩 Puzzles</h3>
+
+    <p><strong>🧱 Puzzle 1: The Cell</strong><br>
+      Torch on the wall, iron bars on the window.<br>
+      <em>Focus: Heat transfer & melting points</em>
+    </p>
+
+    <p><strong>⚒️ Puzzle 2: The Cold Forge</strong><br>
+      Glasses, sunlight, dried grass, cold forge.<br>
+      <em>Focus: Combustion & oxygen</em>
+    </p>
+
+    <p><strong>🔒 Puzzle 3: The Rusted Lock</strong><br>
+      Rusted iron gate, saltwater pool, kitchen.<br>
+      <em>Focus: Acids & corrosion</em>
+    </p>
+
+    <p>
+      <strong>🎯 Goal:</strong><br>
+      Escape the castle, cross the moat, reach the time machine.
+    </p>
+
+    <p><strong>Game Start:</strong><br>
+      <em>
+        “You wake up in a dim, damp cell. The air smells of iron and smoke.
+        You see a flickering torch on the wall and a barred window that looks out
+        over a moat — and your time machine beyond it. What do you do?”
+      </em>
+    </p>
+<script>
+  const modal = document.getElementById("modal");
+  const openBtn = document.getElementById("openModal");
+  const closeBtn = document.querySelector(".close");
+
+  openBtn.onclick = () => modal.style.display = "block";
+  closeBtn.onclick = () => modal.style.display = "none";
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+  </div>
+</div>
+
+      </div>
+      <div class="project">
+  <img src="file:///Users/pavelmoutafov/Downloads/unnamed.png">
+  <h3>Dear Data Poatcard</h3>
+  <p>
+    This is my data postcard! I used musical notation to represent what I talked about throughout a day. The height of the notes represents the duration, the different symbols represent the different conversation topics, and the color represents who I talked to. 
+    <br><br>
+    <h3>
+      <a href="https://docs.google.com/presentation/d/1RhKJk2zYyooMYQThFCkLi3nzmf3937sYWnHDkSGMc6I/edit?slide=id.g2077276a8c4_0_25#slide=id.g2077276a8c4_0_25">
+      View Project
+    </a>
+  </h3>
+  </p>
+</div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 [Your Name]. All rights reserved.
+  </footer>
+
+</body>
+</html>
